@@ -2,7 +2,7 @@
 
 namespace ShutdownTimer;
 internal class ShutdownTimer {
-	private readonly ActivityWatcher activityWatcher = new();
+	private readonly ActivityWatcher activityWatcher;
 
 	private const int SHUTDOWN_NOTIFICATION_SECONDS = 30;
 
@@ -15,7 +15,9 @@ internal class ShutdownTimer {
 	private bool showPreviewAlert = false;
 
 	public ShutdownTimer() {
-		timer = new(100);
+		activityWatcher = new();
+		activityWatcher.UserAction += ActivityWatcher_UserAction;
+		timer = new(1000);
 		timer.Elapsed += Timer_Elapsed;
 	}
 
@@ -33,10 +35,8 @@ internal class ShutdownTimer {
 		lastActivity = DateTimeOffset.UtcNow;
 
 		if (start) {
-			activityWatcher.UserAction += ActivityWatcher_UserAction;
 			timer.Start();
 		} else {
-			activityWatcher.UserAction -= ActivityWatcher_UserAction;
 			timer.Stop();
 		}
 

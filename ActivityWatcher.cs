@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace ShutdownTimer;
+﻿namespace ShutdownTimer;
 internal class ActivityWatcher {
 	private int x;
 	private int y;
@@ -13,7 +11,7 @@ internal class ActivityWatcher {
 
 	private async Task WatchAsync() {
 		while (true) {
-			await Task.Delay(100);
+			await Task.Delay(1000);
 			if (x == Cursor.Position.X
 				&& y == Cursor.Position.Y) {
 				continue;
