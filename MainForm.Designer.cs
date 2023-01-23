@@ -34,9 +34,13 @@ partial class Main {
 			// 
 			// ButtonStart
 			// 
-			this.ButtonStart.BackColor = System.Drawing.Color.PaleGreen;
+			this.ButtonStart.BackColor = System.Drawing.Color.DarkGreen;
+			this.ButtonStart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+			this.ButtonStart.FlatAppearance.BorderSize = 0;
+			this.ButtonStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.ButtonStart.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.ButtonStart.Location = new System.Drawing.Point(98, 46);
+			this.ButtonStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+			this.ButtonStart.Location = new System.Drawing.Point(98, 45);
 			this.ButtonStart.Name = "ButtonStart";
 			this.ButtonStart.Size = new System.Drawing.Size(110, 41);
 			this.ButtonStart.TabIndex = 0;
@@ -46,8 +50,8 @@ partial class Main {
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Image = global::ShutdownTimer.Properties.Resources.icon;
-			this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(12, 11);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(80, 75);
 			this.pictureBox1.TabIndex = 3;
@@ -55,8 +59,11 @@ partial class Main {
 			// 
 			// TextMinutes
 			// 
+			this.TextMinutes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+			this.TextMinutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.TextMinutes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.TextMinutes.Location = new System.Drawing.Point(159, 12);
+			this.TextMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+			this.TextMinutes.Location = new System.Drawing.Point(159, 11);
 			this.TextMinutes.Name = "TextMinutes";
 			this.TextMinutes.Size = new System.Drawing.Size(49, 29);
 			this.TextMinutes.TabIndex = 4;
@@ -66,7 +73,8 @@ partial class Main {
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(98, 20);
+			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+			this.label1.Location = new System.Drawing.Point(98, 19);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(50, 15);
 			this.label1.TabIndex = 5;
@@ -76,7 +84,8 @@ partial class Main {
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(220, 99);
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+			this.ClientSize = new System.Drawing.Size(220, 94);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.TextMinutes);
 			this.Controls.Add(this.pictureBox1);
@@ -84,8 +93,6 @@ partial class Main {
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(236, 138);
-			this.MinimumSize = new System.Drawing.Size(236, 138);
 			this.Name = "Main";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

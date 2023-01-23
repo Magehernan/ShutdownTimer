@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace ShutdownTimer;
 
 public partial class Main : Form {
@@ -25,12 +27,12 @@ public partial class Main : Form {
 		textMinutes.Enabled = !active;
 
 		if (active) {
-			buttonStart.BackColor = Color.LightPink;
+			buttonStart.BackColor = Color.DarkRed;
 			buttonStart.Text = "Stop";
 			return;
 		}
 
-		buttonStart.BackColor = Color.LightGreen;
+		buttonStart.BackColor = Color.DarkGreen;
 		buttonStart.Text = "Start";
 	}
 
@@ -48,7 +50,14 @@ public partial class Main : Form {
 		shutdownTimer.Start(minutes);
 	}
 
-	private void ButtonStop_Click(object sender, EventArgs e) {
-		shutdownTimer.Stop();
+	#region DarkForm
+	[LibraryImport("DwmApi")]
+	private static partial int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
+
+	protected override void OnHandleCreated(EventArgs e) {
+		if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0) {
+			_ = DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
+		}
 	}
+	#endregion
 }
