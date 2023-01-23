@@ -20,7 +20,7 @@ public partial class Main : Form {
 
 	private void WriteState(bool active) {
 		if (buttonStart.InvokeRequired) {
-			buttonStart.Invoke(WriteState);
+			buttonStart.Invoke(WriteState, active);
 			return;
 		}
 

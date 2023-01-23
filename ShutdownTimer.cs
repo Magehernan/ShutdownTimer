@@ -65,6 +65,7 @@ internal class ShutdownTimer {
 
 		Stop();
 		ProcessStartInfo processStartInfo = new("shutdown.exe", "/s /t 0");
-		Process.Start(processStartInfo);
+		Process? process = Process.Start(processStartInfo);
+		process?.WaitForExit();
 	}
 }
