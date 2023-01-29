@@ -55,7 +55,7 @@ internal class ShutdownTimer {
 		if (!showPreviewAlert
 			&& shutdownTime.AddSeconds(-SHUTDOWN_NOTIFICATION_SECONDS) < DateTimeOffset.UtcNow) {
 			showPreviewAlert = true;
-			MessageBox.Show($"Shutdown in {SHUTDOWN_NOTIFICATION_SECONDS} seconds");
+			MessageBox.Show($"Shutdown in {SHUTDOWN_NOTIFICATION_SECONDS} seconds", "Notification", MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
 			return;
 		}
 

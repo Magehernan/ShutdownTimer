@@ -12,6 +12,7 @@ public partial class Main : Form {
 		buttonStart = (Button)Controls.Find("ButtonStart", false)[0];
 		shutdownTimer = new();
 		shutdownTimer.StateChanged += ShutdownTimer_StateChanged;
+		ButtonStart_Click(this, EventArgs.Empty);
 	}
 
 	private void ShutdownTimer_StateChanged(bool active) {
